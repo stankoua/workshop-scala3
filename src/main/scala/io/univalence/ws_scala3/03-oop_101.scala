@@ -82,7 +82,7 @@ def _03_02_singleton(): Unit = {
   section("PART 2 - Singleton") {
 
     exercise("Simple singleton", activated = true) {
-      /**
+       /**
         * Scala offers the singleton design pattern as a language construct, i.e. the 
         * language offers a syntax to create a singleton object. In this example, to
         * define a singleton, we can just declare it with the `object` keyword. A 
@@ -133,9 +133,15 @@ def _03_02_singleton(): Unit = {
        * an example.
        * Here we have the standard constructor the class.
        */
-      class Greeter(prefix: String, suffix: String) {
+      class Greeter(val prefix: String, val suffix: String) {
         def greet(name: String): String =
           s"$prefix $name $suffix"
+
+        override def equals(that: Any): Boolean = 
+          that.isInstanceOf[Greeter] && {
+            val those = that.asInstanceOf[Greeter]
+            those.prefix == this.prefix && those.suffix == this.suffix
+          }
       }
 
       object Greeter {

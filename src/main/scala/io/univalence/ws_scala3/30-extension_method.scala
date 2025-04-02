@@ -81,14 +81,14 @@ object _01_extension_method {
             )
         )
 
-      exercise("What will be the total price?", activated = true) {
-        comment("Waht is the total price of the order?")
+      exercise("What will be the total price ?", activated = true) {
+        comment("What is the total price of the order ?")
         check(order.total() == ??)
       }
 
-      exercise("Your turn! Count items in an order", activated = false) {
+      exercise("Your turn! Count items in an order", activated = true) {
         // `countProducts` is a method that should count the number of
-        // products that appears in an order/
+        // products that appears in an order
 
         // TODO uncomment the line below and declare the extension method `countProducts`
 //        check(order.countProducts() == 18)
@@ -151,11 +151,16 @@ object _02_multi_extension {
           )
 
         comment("What is the smallest word in the list?")
-        check(l.smallest == ??)
+        check(l.smallest == "choux")
         comment("What is the largest word in the list?")
-        check(l.largest == ??)
+        check(l.largest == "cailloux")
         comment("What is the list words right padded according to the largest word?")
-        check(l.padToLargest == ??)
+        check(l.padToLargest == List(
+            "genoux  ",
+            "choux   ",
+            "cailloux",
+            "hiboux  "
+        ))
       }
     }
 
